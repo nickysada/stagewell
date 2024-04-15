@@ -57,5 +57,4 @@ tunnels = {
     peer_external_gateway_interface = 1    
   }
 }
-#secret_names = ["shared-key-vpn-tunnel-1", "shared-key-vpn-tunnel-2"]   # list of Pre-shared key secret in Secret Manager
-secret_names = ["tunnel-1", "tunnel-2"]
+secret_names = ["shared-key-vpn-tunnel-1", "shared-key-vpn-tunnel-2"]   # list of Pre-shared key secret in Secret Manager
