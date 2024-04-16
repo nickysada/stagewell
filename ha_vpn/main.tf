@@ -11,7 +11,7 @@ module "ha_vpn_gateway_router" {
   resource_prefix = local.resource_prefix
   project_id      = var.project_id
   region          = var.region
-  network         = var.network
+  network         = var.network    # Update in this "projects/${var.host_project_id}/global/networks/${var.network}"
   #stack_type      = var.stack_type
 
   # Create Cloud Router

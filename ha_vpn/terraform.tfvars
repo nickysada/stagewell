@@ -1,7 +1,8 @@
 project_id = "rohan-orbit" # Update Project ID
-region     = "us-central1"
-network    = "thanos" 
-router_asn = 65432
+#host_project_id =       # Update with project name where your vpc resides
+region     = "us-central1" # Update Region
+network    = "thanos"      # Update network name
+router_asn = 65432         # Update Me
 router_advertise_config = ({
   groups    = ["ALL_SUBNETS"]
   ip_ranges = {}
@@ -57,4 +58,4 @@ tunnels = {
     peer_external_gateway_interface = 1    
   }
 }
-secret_names = ["shared-key-vpn-tunnel-1", "shared-key-vpn-tunnel-2"]   # list of Pre-shared key secret in Secret Manager
+secret_names = ["shared-key-vpn-tunnel-1", "shared-key-vpn-tunnel-2"]   # Update list of Pre-shared key secret name created in Secret Manager

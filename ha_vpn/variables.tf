@@ -4,6 +4,12 @@ variable "project_id" {
   description = "Project where resources will be created."
   type        = string
 }
+
+variable "host_project_id" {
+  description = "Project name where network resource is created."
+  type        = string
+}
+
 variable "network" {
   description = "VPC used for the gateway and routes."
   type        = string
