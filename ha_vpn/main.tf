@@ -1,5 +1,5 @@
 locals {
-  resource_prefix = "ha-gcp-aws-vpn"
+  resource_prefix = "ha-gcp-aws-vpn" # Update according to Naming Convention
 }
 
 # ------------------------------------------------------------------------------
