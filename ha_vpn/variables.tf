@@ -1,4 +1,4 @@
-# Variable For HA Gateway
+# Common Variables
 
 variable "project_id" {
   description = "Project where resources will be created."
@@ -18,6 +18,8 @@ variable "region" {
   description = "Region used for resources."
   type        = string
 }
+
+# Variable For HA Gateway
 
 variable "create_vpn_gateway" {
   description = "create a VPN gateway"
@@ -60,7 +62,7 @@ variable "keepalive_interval" {
   default     = 20
 }
 
-# Variables For External VPN GATEWAY
+# Variables For External Peer Gateway ,Tunnel and BGP
 
 variable "peer_external_gateway" {
   description = "Configuration of an external VPN gateway to which this VPN is connected."
@@ -122,10 +124,14 @@ variable "tunnels" {
     }
   }
 }
+
+# Variables For Secret
+
 variable "secret_names" {
   type        = list(string)
   description = "List of secret names to fetch"
 }
+
 # variable "peer_gcp_gateway" {
 #   description = "Self Link URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected."
 #   type        = string
