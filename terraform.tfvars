@@ -1,0 +1,10 @@
+project_id            = "-develop"    // Project ID where the resources should be deployed
+project_number        = ""      // Project number where the resources should be deployed
+env                   = "dev"               // Environment to deploy to
+region                = "us-central1"       // Region to deploy
+machine_type          = "e2-micro"          // Machine type for vpc connector instance
+connector_name        = "divdot-serverless" // VPC connector name 
+ip_cidr_range         = "10.8.0.0/28"       // IP subnet range for Cloud Run services
+min_instances         = 2                   // Cloud Run minimum instance number
+max_instances         = 4                   //Cloud Run maximum instance number
+network_endpoint_type = "SERVERLESS"        // Type of NEG
