@@ -1,6 +1,18 @@
 locals {
   cmek_template_annotation = var.encryption_key != null ? { "run.googleapis.com/encryption-key" = var.encryption_key } : {}
   template_annotations     = merge(var.template_annotations, local.cmek_template_annotation)
+  sa_id                = format("%s-sa", var.service_name) 
+
+}
+
+module "cloudrun_service_account" {
+  source        = "terraform-google-modules/service-accounts/google"
+  version       = "~> 4.2"
+  count         = var.create_service_account ? 1 : 0
+  project_id    = var.project_id
+  generate_keys = false      
+  names         = [local.sa_id]
+  project_roles = var.sa_project_roles
 }
 
 resource "google_cloud_run_service" "main" {
@@ -147,6 +159,9 @@ resource "google_cloud_run_domain_mapping" "domain_map" {
     ]
   }
 }
+
+
+
 
 resource "google_cloud_run_service_iam_member" "authorize" {
   count    = length(var.members)

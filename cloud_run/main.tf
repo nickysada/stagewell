@@ -24,23 +24,23 @@ module "cloud_run" {
     name = each.value.name
     port = each.value.port
   }
-  source                = "../modules/cloud_run"
-  service_name          = each.value.service_name
-  project_id            = var.project_id
-  location              = var.region
-  image                 = each.value.image
-  service_account_email = module.cloudrun_service_account.email
-  template_annotations  = each.value.template_annotations
-  service_annotations   = each.value.service_annotations
-  env_secret_vars       = each.value.env_secret_vars
-  env_vars              = each.value.env_vars
-  limits                = each.value.limits
-  container_command     = each.value.container_command
-  argument              = each.value.container_arg
-  volume_mounts         = each.value.volume_mounts
-  volumes               = each.value.volumes
+  source                 = "../../modules/cloud_run"
+  service_name           = each.value.service_name
+  project_id             = var.project_id
+  location               = var.region
+  image                  = each.value.image
+  template_annotations   = each.value.template_annotations
+  service_annotations    = each.value.service_annotations
+  env_secret_vars        = each.value.env_secret_vars
+  env_vars               = each.value.env_vars
+  limits                 = each.value.limits
+  container_command      = each.value.container_command
+  argument               = each.value.container_arg
+  volume_mounts          = each.value.volume_mounts
+  volumes                = each.value.volumes
+  create_service_account = each.value.create_service_account
+  sa_project_roles       = each.value.sa_roles
   depends_on = [
-    module.serverless_connector.connector,
     module.serverless_project_apis
   ]
 }

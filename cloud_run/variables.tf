@@ -1,3 +1,4 @@
+
 # Common Variable
 
 variable "project_id" {
@@ -5,10 +6,10 @@ variable "project_id" {
   type        = string
 }
 
-variable "hub_project_id" {
-  description = "The Project ID where network exist"
-  type        = string
-}
+# variable "hub_project_id" {
+#   description = "The Project ID where network exist"
+#   type        = string
+# }
 
 variable "env" {
   description = "The environment to deploy to"
@@ -61,6 +62,5 @@ variable "machine_type" {
 }
 
 variable "ip_cidr_range" {}
-
 
 

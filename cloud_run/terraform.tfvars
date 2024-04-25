@@ -6,4 +6,5 @@ machine_type          = "e2-micro"    // Machine type for vpc connector instance
 min_instances         = 1             // Cloud Run minimum instance number
 max_instances         = 2             //Cloud Run maximum instance number
 network_name          = "test-env"
-repo_name       = "" // artifact registory name
+repo_name       = "helloworld-repo/helloworld" // artifact registory name
+

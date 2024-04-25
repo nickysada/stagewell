@@ -25,6 +25,10 @@ variable "generate_revision_name" {
   default     = true
 }
 
+variable "create_service_account" {}
+
+variable "sa_project_roles" {}
+
 variable "traffic_split" {
   type = list(object({
     latest_revision = bool
